@@ -1,0 +1,78 @@
+name: QBrix-QLabs-Publish
+on:
+  push:
+    branches: ["main"]
+
+  workflow_dispatch:
+env:
+  CUMULUSCI_KEYCHAIN_CLASS: cumulusci.core.keychain.EnvironmentProjectKeychain
+  CUMULUSCI_SERVICE_github: ${{ secrets.QBRIX_CUMULUSCI_SERVICE_github }}
+  SFDX_CLIENT_ID: ${{ secrets.QBRIX_DEVHUB_CONSUMER_KEY }}
+  SFDX_HUB_KEY: ${{ secrets.QBRIX_DEVHUB_PRIVATE_KEY }}
+  TESTIM_KEY: ${{ secrets.QBRIX_TESTIM_KEY }}
+  TESTIM_GRID: ${{ secrets.QBRIX_TESTIM_GRID }}
+  TESTIM_PROJECT: ${{ secrets.QBRIX_TESTIM_PROJECT }}
+  DEVHUBCONSUMERKEY: ${{ secrets.QBRIX_DEVHUB_CONSUMER_KEY }}
+  DEVHUBJWTKEYFILE: devhub.key
+  GITHUB_PAT: ${{ secrets.QBRIX_GITHUB_PAT}}
+  USE_TEMPLATE: true
+  TEMPLATEID: LATEST
+  TEMPLATE_INSTANCE: NA135
+  SFDX_DISABLE_DNS_CHECK: true
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+  BUILD_SUFFIX: SDO
+
+jobs:
+  qlabs_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Core Setup - key for jwt auth
+        run: echo "${{ secrets.QBRIX_DEVHUB_PRIVATE_KEY }}" > devhub.key
+
+      # Install SFDX
+      - name: Install SFDX
+        run: npm install --location=global sfdx-cli
+
+      # We will use a common app with a common key -
+      - name: Create SFDX Session for QLABS Service Account
+        run: sfdx auth:jwt:grant -u ${{ secrets.QBRIX_QLABS_SERVICE_ACCOUNT }} -d -f devhub.key -i ${{ secrets.QBRIX_DEVHUB_CONSUMER_KEY }}
+
+      - name: Extract the accesstoken
+        run: sfdx force:org:display -u ${{ secrets.QBRIX_QLABS_SERVICE_ACCOUNT }} --json > qlab_tmp.json
+
+      - name: extract the accesstoken for qlabs
+        uses: sergeysova/jq-action@v2
+        id: qlabs_accesstoken
+        with:
+          cmd: jq '.result.accessToken' qlab_tmp.json -r
+
+      - name: Install PYYaml
+        run: python3 -m pip install pyyaml
+
+      - name: Write python File
+        uses: "DamianReeves/write-file-action@master"
+        with:
+          path: ${{ github.workspace }}/qlab_publish.py
+          write-mode: overwrite
+          contents: |
+            import yaml
+            import os
+            import requests
+            import json
+            filepath='${{ github.workspace }}/cumulusci.yml'
+            if(os.path.isfile(filepath)):
+                with open(filepath, 'r') as stream:
+                  yamldata = yaml.safe_load(stream)
+                  url = "https://qlabs-org.my.salesforce.com/services/apexrest/NGQBrixContentService"
+
+                  payload = json.dumps(yamldata)
+                  headers = {
+                      'Authorization': 'Bearer ${{ steps.qlabs_accesstoken.outputs.value }}',
+                      'Content-Type': 'application/json'
+                  }
+                  requests.request("POST", url, headers=headers, data=payload)
+            
+      - name: Run the publish
+        run: python3 ${{ github.workspace }}/qlab_publish.py

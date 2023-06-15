@@ -1,0 +1,17 @@
+{
+  "name": "sam_template_action_framework",
+  "label": "sam_template_action_framework",
+  "scheduleExpression": null,
+  "publishingTarget": "DATASET",
+  "format": "R3",
+  "scheduleType": null,
+  "recipeDefinition": {
+    "version": "56.0",
+    "nodes": {},
+    "ui": {
+      "nodes": {},
+      "connectors": [],
+      "hiddenColumns": []
+    }
+  }
+}

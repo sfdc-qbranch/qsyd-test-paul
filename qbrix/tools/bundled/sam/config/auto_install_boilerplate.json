@@ -1,0 +1,18 @@
+{
+  "hooks": [
+    {
+      "type" : "PackageInstall",
+      "requestName" : "Hook for the Auto-Install Template"
+    }
+  ],
+  "configuration" : {
+    "appConfiguration" :{
+      "failOnDuplicateNames" : false,
+      "autoShareWithLicensedUsers" : true,
+      "autoShareWithOriginator" : true,
+      "deleteAppOnConstructionFailure" : true,
+      "values" : {
+      }
+    }
+  }
+}

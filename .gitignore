@@ -1,0 +1,76 @@
+# This file is used for Git repositories to specify intentionally untracked files that Git should ignore.
+# If you are not using git, you can delete this file. For more information see: https://git-scm.com/docs/gitignore
+# For useful gitignore templates see: https://github.com/github/gitignore
+
+# Salesforce cache
+.sfdx/
+.sf/
+
+# CumulusCI
+.cci/
+src/
+
+#TESTIM
+testim-headless.zip
+
+# Logs
+#logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Eslint cache
+.eslintcache
+
+# MacOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.key
+bin/dataloader/dataloader.jar
+
+#Other SFDX local stuff to not check in - mostly because they'll be covered by other upstream packages
+force-app/main/default/profiles/
+force-app/main/default/appMenus/AppSwitcher.appMenu-meta.xml
+force-app/main/default/flexipages/LightningService_UtilityBar.flexipage-meta.xml
+
+generatedDelta/*
+destructiveChanges/*
+package/*
+
+#ROBOT
+browser/
+playwright-log.txt
+log.html
+output.xml
+report.html
+
+# Q BRIX
+.qbrix/*
+qbrix/robot/__pycache__
+qbrix/salesforce/__pycache__
+qbrix/tools/utils/__pycache__
+qbrix/tools/shared/__pycache__
+qbrix/tools/data/__pycache__
+qbrix/tools/testing/__pycache__
+qbrix/tools/shared/__pycache__/*
+
+#Extra
+.idea/
+tasks/custom/__pycache__
+qbrix/.idea/workspace.xml
+qbrix/tools/shared/__pycache__/qbrix_project_tasks.cpython-310.pyc
+qbrix/tools/data/__pycache__/qbrix_analytics.cpython-310.pyc
+
+#validation outputs
+validationresult.json
+*_results.xml
+qbrix/tools/shared/__pycache__/qbrix_project_tasks.cpython-310.pyc

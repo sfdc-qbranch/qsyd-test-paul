@@ -1,0 +1,60 @@
+{
+  "fileFormat": {
+    "charsetName": "UTF-8",
+    "fieldsDelimitedBy": ",",
+    "fieldsEnclosedBy": "\"",
+    "linesTerminatedBy": "\n"
+  },
+  "objects": [
+    {
+      "connector": "CSV",
+      "fullyQualifiedName": "<DS_NAME>",
+      "label": "<DS_LABEL>.csv",
+      "name": "<DS_NAME>_csv",
+      "fields": [],
+      "fields_boilerplate": {
+        "dimension": {
+          "fullyQualifiedName": "<DIMENSION_NAME>",
+          "name": "<DIMENSION_NAME>",
+          "type": "Text",
+          "label": "<DIMENSION_LABEL>"
+        },
+        "measure_decimal": {
+          "fullyQualifiedName": "<MEASURE_DECIMAL_NAME>",
+          "name": "<MEASURE_DECIMAL_NAME>",
+          "type": "Numeric",
+          "label": "<MEASURE_DECIMAL_LABEL>",
+          "precision": 18,
+          "defaultValue": 0,
+          "scale": 6,
+          "format": "0.0000##",
+          "decimalSeparator": "."
+        },
+        "measure_integer": {
+          "fullyQualifiedName": "<MEASURE_INTEGER_NAME>",
+          "name": "<MEASURE_INTEGER_NAME>",
+          "type": "Numeric",
+          "label": "<MEASURE_INTEGER_LABEL>",
+          "precision": 18,
+          "defaultValue": 0,
+          "scale": 0,
+          "format": "0"
+        },
+        "date": {
+          "fullyQualifiedName": "<DATE_NAME>",
+          "name": "<DATE_NAME>",
+          "type": "Date",
+          "label": "<DATE_LABEL>",
+          "format": "yyyy-MM-dd"
+        },
+        "date_timestamp": {
+          "fullyQualifiedName": "<DATE_TIMESTAMP_NAME>",
+          "name": "<DATE_TIMESTAMP_NAME>",
+          "type": "Date",
+          "label": "<DATE_TIMESTAMP_NAME>",
+          "format": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        }
+      }
+    }
+  ]
+}

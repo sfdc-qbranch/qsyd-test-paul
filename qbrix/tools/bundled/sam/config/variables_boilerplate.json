@@ -1,0 +1,10 @@
+{
+  "action_framework_variable_boilerplate": {
+    "label": "Enter a record ID to set up Quick Actions for field <#DATASET_NAME#>.<#FIELD_NAME#>:",
+    "description": "Selecting 'Open Record' from a Dashboard will open this record.",
+    "defaultValue": "",
+    "variableType": {
+      "type": "StringType"
+    }
+  }
+}

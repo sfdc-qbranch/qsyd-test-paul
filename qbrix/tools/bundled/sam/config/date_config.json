@@ -1,0 +1,258 @@
+[
+    {
+        "python": "%Y-%m-%d'T'%H:%M:%S.%f'Z'",
+        "crma": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    },
+    {
+        "python": "%y-%m-%d'T'%H:%M:%S.%f'Z'",
+        "crma": "yy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    },
+    {
+        "python": "%Y-%m-%d'T'%H:%M:%S'Z'",
+        "crma": "yyyy-MM-dd'T'HH:mm:ss'Z'"
+    },
+    {
+        "python": "%y-%m-%d'T'%H:%M:%S'Z'",
+        "crma": "yy-MM-dd'T'HH:mm:ss'Z'"
+    },
+    {
+        "python": "%Y-%m-%d %H:%M:%S",
+        "crma": "yyyy-MM-dd HH:mm:ss"
+    },
+    {
+        "python": "%y-%m-%d %H:%M:%S",
+        "crma": "yy-MM-dd HH:mm:ss"
+    },
+    {
+        "python": "%d.%m.%Y %H:%M:%S",
+        "crma": "dd.MM.yyyy HH:mm:ss"
+    },
+    {
+        "python": "%d.%m.%y %H:%M:%S",
+        "crma": "dd.MM.yy HH:mm:ss"
+    },
+    {
+        "python": "%d/%m/%Y %H:%M:%S",
+        "crma": "dd/MM/yyyy HH:mm:ss"
+    },
+    {
+        "python": "%d/%m/%y %H:%M:%S",
+        "crma": "dd/MM/yy HH:mm:ss"
+    },
+    {
+        "python": "%d/%m/%Y %I:%M:%S %p",
+        "crma": "dd/MM/yyyy hh:mm:ss a"
+    },
+    {
+        "python": "%d/%m/%y %I:%M:%S %p",
+        "crma": "dd/MM/yy hh:mm:ss a"
+    },
+    {
+        "python": "%d-%m-%Y %H:%M:%S",
+        "crma": "dd-MM-yyyy HH:mm:ss"
+    },
+    {
+        "python": "%d-%m-%y %H:%M:%S",
+        "crma": "dd-MM-yy HH:mm:ss"
+    },
+    {
+        "python": "%d-%m-%Y %I:%M:%S %p",
+        "crma": "dd-MM-yyyy hh:mm:ss a"
+    },
+    {
+        "python": "%d-%m-%y %I:%M:%S %p",
+        "crma": "dd-MM-yy hh:mm:ss a"
+    },
+    {
+        "python": "%m/%d/%Y %I:%M:%S %p",
+        "crma": "MM/dd/yyyy hh:mm:ss a"
+    },
+    {
+        "python": "%m/%d/%y %I:%M:%S %p",
+        "crma": "MM/dd/yy hh:mm:ss a"
+    },
+    {
+        "python": "%m-%d-%Y %I:%M:%S %p",
+        "crma": "MM-dd-yyyy hh:mm:ss a"
+    },
+    {
+        "python": "%m-%d-%y %I:%M:%S %p",
+        "crma": "MM-dd-yy hh:mm:ss a"
+    },
+    {
+        "python": "%H:%M:%S %d/%m/%Y",
+        "crma": "HH:mm:ss dd/MM/yyyy"
+    },
+    {
+        "python": "%H:%M:%S %d/%m/%y",
+        "crma": "HH:mm:ss dd/MM/yy"
+    },
+    {
+        "python": "%Y-%m-%d",
+        "crma": "yyyy-MM-dd"
+    },
+    {
+        "python": "%y-%m-%d",
+        "crma": "yy-MM-dd"
+    },
+    {
+        "python": "%d.%m.%Y",
+        "crma": "dd.MM.yyyy"
+    },
+    {
+        "python": "%d.%m.%y",
+        "crma": "dd.MM.yy"
+    },
+    {
+        "python": "%d/%m/%Y",
+        "crma": "dd/MM/yyyy"
+    },
+    {
+        "python": "%d/%m/%y",
+        "crma": "dd/MM/yy"
+    },
+    {
+        "python": "%d-%m-%Y",
+        "crma": "dd-MM-yyyy"
+    },
+    {
+        "python": "%d-%m-%y",
+        "crma": "dd-MM-yy"
+    },
+    {
+        "python": "%m/%d/%Y",
+        "crma": "MM/dd/yyyy"
+    },
+    {
+        "python": "%m/%d/%y",
+        "crma": "MM/dd/yy"
+    },
+    {
+        "python": "%m-%d-%Y",
+        "crma": "MM-dd-yyyy"
+    },
+    {
+        "python": "%m-%d-%y",
+        "crma": "MM-dd-yy"
+    },
+    {
+        "python": "%Y-M-d H:m:s",
+        "crma": "yyyy-M-d H:m:s"
+    },
+    {
+        "python": "%y-M-d H:m:s",
+        "crma": "yy-M-d H:m:s"
+    },
+    {
+        "python": "d.M.%Y H:m:s",
+        "crma": "d.M.yyyy H:m:s"
+    },
+    {
+        "python": "d.M.%y H:m:s",
+        "crma": "d.M.yy H:m:s"
+    },
+    {
+        "python": "d/M/%Y H:m:s",
+        "crma": "d/M/yyyy H:m:s"
+    },
+    {
+        "python": "d/M/%y H:m:s",
+        "crma": "d/M/yy H:m:s"
+    },
+    {
+        "python": "d/M/%Y h:m:s %p",
+        "crma": "d/M/yyyy h:m:s a"
+    },
+    {
+        "python": "d/M/%y h:m:s %p",
+        "crma": "d/M/yy h:m:s a"
+    },
+    {
+        "python": "d-M-%Y H:m:s",
+        "crma": "d-M-yyyy H:m:s"
+    },
+    {
+        "python": "d-M-%y H:m:s",
+        "crma": "d-M-yy H:m:s"
+    },
+    {
+        "python": "d-M-%Y h:m:s %p",
+        "crma": "d-M-yyyy h:m:s a"
+    },
+    {
+        "python": "d-M-%y h:m:s %p",
+        "crma": "d-M-yy h:m:s a"
+    },
+    {
+        "python": "M/d/%Y h:m:s %p",
+        "crma": "M/d/yyyy h:m:s a"
+    },
+    {
+        "python": "M/d/%y h:m:s %p",
+        "crma": "M/d/yy h:m:s a"
+    },
+    {
+        "python": "M-d-%Y h:m:s %p",
+        "crma": "M-d-yyyy h:m:s a"
+    },
+    {
+        "python": "M-d-%y h:m:s %p",
+        "crma": "M-d-yy h:m:s a"
+    },
+    {
+        "python": "H:m:s d/M/%Y",
+        "crma": "H:m:s d/M/yyyy"
+    },
+    {
+        "python": "H:m:s d/M/%y",
+        "crma": "H:m:s d/M/yy"
+    },
+    {
+        "python": "%Y-M-d",
+        "crma": "yyyy-M-d"
+    },
+    {
+        "python": "%y-M-d",
+        "crma": "yy-M-d"
+    },
+    {
+        "python": "d.M.%Y",
+        "crma": "d.M.yyyy"
+    },
+    {
+        "python": "d.M.%y",
+        "crma": "d.M.yy"
+    },
+    {
+        "python": "d/M/%Y",
+        "crma": "d/M/yyyy"
+    },
+    {
+        "python": "d/M/%y",
+        "crma": "d/M/yy"
+    },
+    {
+        "python": "d-M-%Y",
+        "crma": "d-M-yyyy"
+    },
+    {
+        "python": "d-M-%y",
+        "crma": "d-M-yy"
+    },
+    {
+        "python": "M/d/%Y",
+        "crma": "M/d/yyyy"
+    },
+    {
+        "python": "M/d/%y",
+        "crma": "M/d/yy"
+    },
+    {
+        "python": "M-d-%Y",
+        "crma": "M-d-yyyy"
+    },
+    {
+        "python": "M-d-%y",
+        "crma": "M-d-yy"
+    }
+]

@@ -1,0 +1,73 @@
+{
+  "nodes": {
+    "NODE_0_<#DATASET_NAME#>": {
+      "action": "load",
+      "parameters": {
+        "dataset": {
+          "label": "${App.Datasets.<#DATASET_NAME#>.Label}",
+          "name": "${App.Datasets.<#DATASET_NAME#>.FullyQualifiedName}",
+          "type": "analyticsDataset"
+        },
+        "fields": [],
+        "sampleDetails": {
+          "sortBy": [],
+          "type": "TopN"
+        }
+      },
+      "sources": []
+    },
+    "SAVE_<#DATASET_NAME#>": {
+      "action": "save",
+      "parameters": {
+        "dataset": {
+          "type": "analyticsDataset",
+          "label": "${App.Datasets.<#DATASET_NAME#>.Label}",
+          "name": "${App.Datasets.<#DATASET_NAME#>.Name}",
+          "folderName": "${App.Folder.FullyQualifiedName}"
+        },
+        "fields": [],
+        "measuresToCurrencies": []
+      },
+      "sources": [
+        "NODE_0_<#DATASET_NAME#>"
+      ]
+    }
+  },
+  "ui": {
+    "nodes": {
+      "NODE_0_<#DATASET_NAME#>": {
+        "label": "Load ${App.Datasets.<#DATASET_NAME#>.Label}",
+        "type": "LOAD_DATASET",
+        "top": 112,
+        "left": 112,
+        "parameters": {
+          "sampleSize": 2000
+        }
+      },
+      "TRANSFORM_<#DATASET_NAME#>": {
+        "label": "ADD_ACTION_FRAMEWORK_FIELDS",
+        "type": "TRANSFORM",
+        "top": 112,
+        "left": 252,
+        "graph": {},
+        "connectors": []
+      },
+      "SAVE_<#DATASET_NAME#>": {
+        "label": "Save ${App.Datasets.<#DATASET_NAME#>.Label}",
+        "type": "OUTPUT",
+        "top": 112,
+        "left": 392
+      }
+    },
+    "connectors": [
+      {
+        "source": "NODE_0_<#DATASET_NAME#>",
+        "target": "TRANSFORM_<#DATASET_NAME#>"
+      },
+      {
+        "source": "TRANSFORM_<#DATASET_NAME#>",
+        "target": "SAVE_<#DATASET_NAME#>"
+      }
+    ]
+  }
+}

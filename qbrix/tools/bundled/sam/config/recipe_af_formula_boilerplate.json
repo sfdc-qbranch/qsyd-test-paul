@@ -1,0 +1,42 @@
+{
+  "nodes": {
+    "NODE_<#COUNT#>_<#DATASET_NAME#>": {
+      "action": "formula",
+      "parameters": {
+        "expressionType": "SQL",
+        "fields": [
+          {
+            "defaultValue": "",
+            "formulaExpression": "'${Variables.<#AF_VAR_ID#>}'",
+            "label": "<#AF_VAR_ID#>",
+            "name": "<#AF_VAR_ID#>",
+            "precision": 255,
+            "type": "TEXT"
+          }
+        ]
+      },
+      "sources": [
+        "NODE_<#COUNTMINUSONE#>_<#DATASET_NAME#>"
+      ]
+    }
+  },
+  "ui": {
+    "nodes": {
+      "TRANSFORM_<#DATASET_NAME#>": {
+        "label": "ADD_ACTION_FRAMEWORK_FIELDS",
+        "type": "TRANSFORM",
+        "top": 112,
+        "left": 252,
+        "graph": {
+          "NODE_<#COUNT#>_<#DATASET_NAME#>": {
+            "parameters": {
+              "type": "BASE_FORMULA_UI"
+            },
+            "label": "<#AF_VAR_ID#>"
+          }
+        },
+        "connectors": []
+      }
+    }
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "rules": [
+    {
+      "name": "Dashboards: Replace Dataset Field API Name Periods with Underscores",
+      "appliesTo":[
+        {
+          "type": "dashboard",
+          "name": "*"
+        },
+        {
+          "type": "component",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "action": "set",
+          "description": "Remove periods where Python script added <##REMOVE_PRECEDING_PERIOD##>)",
+          "path": "$.*",
+          "value": "${string:replace(Rules.CurrentNode,'.<##REMOVE_PRECEDING_PERIOD##>','')}"
+        },
+        {
+          "action": "set",
+          "description": "XMD Measures Fields - Replace periods with underscores",
+          "path": "$.xmd.measures[*].field",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "XMD Measures Conditional Formatting chartColor referenceField  - Replace periods with underscores",
+          "path": "$.xmd.measures[*].conditionalFormatting.chartColor.referenceField",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "XMD Dimension Fields - Replace periods with underscores",
+          "path": "$.xmd.dimensions[*].field",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "XMD Dimensions Conditional Formatting chartColor referenceField  - Replace periods with underscores",
+          "path": "$.xmd.dimensions[*].conditionalFormatting.chartColor.referenceField",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "GLOBAL DATA SOURCE LINKS - Replace periods with underscores",
+          "path": "$.state.dataSourceLinks[*].fields[*].fieldName",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "GLOBAL FILTER FIELDS - Replace periods with underscores",
+          "path": "$.state.filters[*].fields[*]",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "QUERY - Replace periods with underscores",
+          "path": "$.state.steps[*].query",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "GROUPS - Replace periods with underscores",
+          "path": "$.state.steps[*].groups[*]",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "STRINGS - Replace periods with underscores",
+          "path": "$.state.steps[*].strings[*]",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "steps.visualizationParameters.parameters.columnMap - Replace periods with underscores ",
+          "path": "$.state.steps[*].visualizationParameters.parameters.columnMap",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "steps.visualizationParameters.parameters.columnProperties - Replace periods with underscores ",
+          "path": "$.state.steps[*].visualizationParameters.parameters.columnProperties.*~",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "steps.visualizationParameters.parameters.columns - Replace periods with underscores ",
+          "path": "$.state.steps[*].visualizationParameters.parameters.columns",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "widgets.parameters.columnMap - Replace periods with underscores ",
+          "path": "$.state.widgets[*].parameters.columnMap",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "widgets.parameters.columnProperties.*~ - Replace periods with underscores ",
+          "path": "$.state.widgets[*].parameters.columnProperties.*~",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "widgets.parameters.columns - Replace periods with underscores ",
+          "path": "$.state.widgets[*].parameters.columns",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "widgets.parameters.displayTemplate - Replace periods with underscores ",
+          "path": "$.state.widgets[*].parameters.displayTemplate",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "QUERY.QUERY.MEASURES - Replace periods with underscores",
+          "path": "$.state.steps[*].query.query.measures[*]",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "QUERY.QUERY.FILTERS - Replace periods with underscores",
+          "path": "$.state.steps[*].query.query.filters[*][0]",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "QUERY.QUERY.VALUES - Replace periods with underscores",
+          "path": "$.state.steps[*].query.query.values[*]",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "QUERY.QUERY.ORDER - Replace periods with underscores",
+          "path": "$.state.steps[*].query.query.order[*]",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "QUERY.QUERY.ORDER - Replace periods with underscores",
+          "path": "$.state.steps[*].query.query.order[*]",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "QUERY.QUERY.GROUPS - Replace periods with underscores",
+          "path": "$.state.steps[*].query.query.groups[*]",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "QUERY.QUERY.COLUMNS.QUERY.MEASURES - Replace periods with underscores",
+          "path": "$.state.steps[*].query.query.columns[*].query.measures",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "QUERY.QUERY.COLUMNS.QUERY.FILTERS- Replace periods with underscores",
+          "path": "$.state.steps[*].query.query.columns[*].query.filters[*][0]",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "QUERY.QUERY.COLUMNS.QUERY.ORDER- Replace periods with underscores",
+          "path": "$.state.steps[*].query.query.columns[*].query.order[*]",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "QUERY.QUERY.COLUMNS.QUERY.GROUPS- Replace periods with underscores",
+          "path": "$.state.steps[*].query.query.columns[*].query.groups[*]",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "QUERY.VALUES - (Staticflex queries) Replace periods with underscores",
+          "path": "$.state.steps[*].values[*].value",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "QUERY.QUERY.SAQL - (Staticflex queries) Replace periods with underscores",
+          "path": "$.state.steps[*].query.query.saql",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "set",
+          "description": "QUERY.QUERY.PIGQL - (Staticflex queries) Replace periods with underscores",
+          "path": "$.state.steps[*].query.query.pigql",
+          "value": "${string:replace(Rules.CurrentNode,'.','_')}"
+        },
+        {
+          "action": "delete",
+          "description": "Remove destinationLink from link widgets",
+          "path": "$.state.widgets[*].parameters.destinationLink"
+        },
+        {
+          "action": "delete",
+          "description": "Remove destination from link widgets",
+          "path": "$.state.widgets[*].parameters.destination"
+        },
+        {
+          "action": "set",
+          "description": "Replace periods in the dashboard where they actually need to be! (Python script replaced periods with <REPLACE_WITH_PERIOD>)",
+          "path": "$.*",
+          "value": "${string:replace(Rules.CurrentNode,'<##REPLACE_WITH_PERIOD##>','.')}"
+        }
+      ]
+    }
+  ]
+}
