@@ -1,0 +1,104 @@
+# Editing this file is usually not recommended because it will
+# be overwritten the next time you re-capture this data.
+#
+# You can change this file's contents permanently by creating a
+# .load.yml file and re-capturing:
+#
+#  https://cumulusci.readthedocs.io/en/stable/data.html#extracting-and-loading-sample-datasets
+Insert Individual:
+  sf_object: Individual
+  table: Individual
+  fields:
+  - LastName
+Insert OperatingHours:
+  sf_object: OperatingHours
+  table: OperatingHours
+  fields:
+  - Name
+  - TimeZone
+Insert Account:
+  sf_object: Account
+  table: Account
+  fields:
+  - Description
+  - Fax
+  - Name
+  - AccountNumber
+  - Phone
+  - Rating
+  - Site
+  - AccountSource
+  - Type
+  - AnnualRevenue
+  - PersonAssistantName
+  - PersonAssistantPhone
+  - BillingCity
+  - BillingCountry
+  - BillingGeocodeAccuracy
+  - BillingLatitude
+  - BillingLongitude
+  - BillingState
+  - BillingStreet
+  - BillingPostalCode
+  - PersonBirthdate
+  - Jigsaw
+  - PersonDepartment
+  - PersonDoNotCall
+  - PersonEmail
+  - PersonEmailBouncedDate
+  - PersonEmailBouncedReason
+  - PersonHasOptedOutOfEmail
+  - NumberOfEmployees
+  - PersonHasOptedOutOfFax
+  - FirstName
+  - PersonGenderIdentity
+  - PersonHomePhone
+  - Industry
+  - LastName
+  - PersonLeadSource
+  - PersonMailingCity
+  - PersonMailingCountry
+  - PersonMailingGeocodeAccuracy
+  - PersonMailingLatitude
+  - PersonMailingLongitude
+  - PersonMailingState
+  - PersonMailingStreet
+  - PersonMailingPostalCode
+  - PersonMobilePhone
+  - PersonOtherCity
+  - PersonOtherCountry
+  - PersonOtherGeocodeAccuracy
+  - PersonOtherLatitude
+  - PersonOtherLongitude
+  - PersonOtherPhone
+  - PersonOtherState
+  - PersonOtherStreet
+  - PersonOtherPostalCode
+  - Ownership
+  - PersonPronouns
+  - Salutation
+  - ShippingCity
+  - ShippingCountry
+  - ShippingGeocodeAccuracy
+  - ShippingLatitude
+  - ShippingLongitude
+  - ShippingState
+  - ShippingStreet
+  - ShippingPostalCode
+  - Sic
+  - SicDesc
+  - TickerSymbol
+  - PersonTitle
+  - Website
+  - RecordTypeId
+  lookups:
+    PersonIndividualId:
+      table: Individual
+      key_field: PersonIndividualId
+    OperatingHoursId:
+      table: OperatingHours
+      key_field: OperatingHoursId
+    ParentId:
+      table: Account
+      key_field: ParentId
+      after: Insert Account
